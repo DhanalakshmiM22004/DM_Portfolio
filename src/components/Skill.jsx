@@ -3,46 +3,51 @@ import { useEffect } from 'react';
 
 const Skill = () => {
   useEffect(() => {
-    // Scroll observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('show');
+
+          // Only trigger progress animation when skills-wrapper enters view
+          if (entry.target.classList.contains('skills-wrapper')) {
+            const skills = entry.target.querySelectorAll('.skill');
+
+            skills.forEach(skill => {
+              const circle = skill.querySelector('.progress-ring__circle');
+              const text = skill.querySelector('.circle-text');
+              const percentage = parseInt(skill.dataset.value);
+              const radius = circle.r.baseVal.value;
+              const circumference = 2 * Math.PI * radius;
+
+              circle.style.strokeDasharray = `${circumference} ${circumference}`;
+              circle.style.strokeDashoffset = circumference;
+
+              let current = 0;
+              const interval = setInterval(() => {
+                if (current >= percentage) {
+                  clearInterval(interval);
+                } else {
+                  current++;
+                  const offset = circumference - (current / 100) * circumference;
+                  circle.style.strokeDashoffset = offset;
+                  text.textContent = `${current}%`;
+                }
+              }, 20);
+            });
+
+            // Disconnect this observer after animation is done
+            observer.unobserve(entry.target);
+          }
         } else {
           entry.target.classList.remove('show');
         }
       });
-    }, { threshold: 0.3 });
+    }, {
+      threshold: 0.3
+    });
 
     const elements = document.querySelectorAll('.skills-wrapper, .title2, .skill-description');
     elements.forEach(el => observer.observe(el));
-
-    // Circle animation
-    const skills = document.querySelectorAll('.skill');
-
-    skills.forEach(skill => {
-      const circle = skill.querySelector('.progress-ring__circle');
-      const text = skill.querySelector('.circle-text');
-      const percentage = parseInt(skill.dataset.value);
-      const radius = circle.r.baseVal.value;
-      const circumference = 2 * Math.PI * radius;
-
-      circle.style.strokeDasharray = ${circumference} ${circumference};
-      circle.style.strokeDashoffset = circumference;
-
-      let currentPercent = 0;
-
-      const animate = setInterval(() => {
-        if (currentPercent >= percentage) {
-          clearInterval(animate);
-        } else {
-          currentPercent++;
-          const offset = circumference - (currentPercent / 100) * circumference;
-          circle.style.strokeDashoffset = offset;
-          text.textContent = ${currentPercent}%;
-        }
-      }, 20);
-    });
 
     return () => observer.disconnect();
   }, []);
@@ -51,12 +56,10 @@ const Skill = () => {
     <section id="Skills">
       <h1 className="title2">Skills</h1>
       <p className="skill-description">
-  Combining creativity and logic to transform ideas into functional and aesthetic web interfaces.
-</p>
+        Combining creativity and logic to transform ideas into functional and aesthetic web interfaces.
+      </p>
 
       <div className="skills-wrapper">
-
-        {/* SKILL ITEM TEMPLATE */}
         {[
           { icon: 'fas fa-paint-brush', label: 'UI / UX', value: 70 },
           { icon: 'fab fa-html5', label: 'HTML', value: 90 },
@@ -105,7 +108,6 @@ const Skill = () => {
             <h3>{skill.label}</h3>
           </div>
         ))}
-
       </div>
     </section>
   );
