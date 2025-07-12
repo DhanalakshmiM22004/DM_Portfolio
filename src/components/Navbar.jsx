@@ -27,7 +27,7 @@ const Navbar = () => {
 
       <ul className={menuOpen ? 'active' : ''}>
         {[
-          { href: '/Portfolio', label: 'Home' },
+          { href: '/', label: 'Home' },
           { href: '#about', label: 'About' },
           { href: '#Skills', label: 'Skill' },
           { href: '#Project', label: 'Projects' },
