@@ -1,5 +1,22 @@
 import './footer.css';
+import { useEffect } from 'react';
 const Footer = () => {
+     useEffect(() => {
+       const observer = new IntersectionObserver((entries) => {
+         entries.forEach(entry => {
+           if (entry.isIntersecting) {
+             entry.target.classList.add('show');
+           } else {
+             entry.target.classList.remove('show');
+           }
+         });
+       }, { threshold: 0.3 });
+   
+      const elements = document.querySelectorAll('.fa, .talk');
+       elements.forEach(el => observer.observe(el));
+   
+       return () => observer.disconnect();
+     }, []);
     return (
    <>
 
