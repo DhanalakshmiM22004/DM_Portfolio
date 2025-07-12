@@ -14,7 +14,7 @@ const Skill = () => {
       });
     }, { threshold: 0.3 });
 
-    const elements = document.querySelectorAll('.skills-wrapper, .title2, .skill-description');
+    const elements = document.querySelectorAll('.skills-wrapper, .title1, .skill-description');
     elements.forEach(el => observer.observe(el));
 
     // Circle animation
@@ -27,7 +27,7 @@ const Skill = () => {
       const radius = circle.r.baseVal.value;
       const circumference = 2 * Math.PI * radius;
 
-      circle.style.strokeDasharray =` ${circumference} ${circumference}`;
+      circle.style.strokeDasharray = `${circumference} ${circumference}`;
       circle.style.strokeDashoffset = circumference;
 
       let currentPercent = 0;
@@ -39,7 +39,7 @@ const Skill = () => {
           currentPercent++;
           const offset = circumference - (currentPercent / 100) * circumference;
           circle.style.strokeDashoffset = offset;
-          text.textContent =` ${currentPercent}%`;
+          text.textContent = `${currentPercent}%`;
         }
       }, 20);
     });
@@ -49,11 +49,10 @@ const Skill = () => {
 
   return (
     <section id="Skills">
-      <h1 className="title2">Skills</h1>
+      <h1 className="title1">Skills</h1>
       <p className="skill-description">
   Combining creativity and logic to transform ideas into functional and aesthetic web interfaces.
 </p>
-
       <div className="skills-wrapper">
 
         {/* SKILL ITEM TEMPLATE */}
