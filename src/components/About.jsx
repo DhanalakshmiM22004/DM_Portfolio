@@ -37,18 +37,7 @@ I enjoy transforming concepts into real, user-friendly web interfaces.
 I`m passionate about continuous learning and staying updated with the latest web technologies to build modern, scalable solutions.
 I have hands-on experience with technologies like React, Node.js, MongoDB, HTML, CSS, and JavaScript.
 My strengths include problem-solving, clean code practices, and a keen eye for UI/UX design.
-I`m always excited to collaborate on meaningful projects that make a real impact.</p>
-        <ul>
-          <li><span>Birthday:</span> December 22, 2004</li>
-          <li><span>Email:</span> dhanalakshmi.22004@gmail</li>
-          <li><span>LinkedIn:</span> Dhanalakshmi M</li>
-          <li><span>GitHub:</span> DhanlakshmiM22004</li>
-          <li><span>Address:</span> Adyar, Chennai-20</li>
-          <li><span>Language:</span> English, Tamil</li>
-        </ul>
-       <div className="btn-wrapper">
-          <a href="./src/img/Dhanalakshmi M Resume.pdf" download className="btn">Download Resume</a>
-       </div>
+I`m always excited to collaborate on meaningful projects that make a real impact.I thrive in team environments where creativity and feedback are encouraged. My goal is to grow as a developer while contributing to innovative digital experiences.</p>
       </div>
     </div>
   </section>
