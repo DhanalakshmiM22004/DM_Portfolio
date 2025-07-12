@@ -108,6 +108,17 @@ scroll-margin-top: 100px;
         width: 55%;
       }
 }
+@media screen and (max-width: 991px) {
+ .card{
+      background:whitesmoke;
+      width: calc(29% - 10px);
+      height: 35%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+}
      @media screen and (max-width: 800px) {
   .card {
         width: 55%;
