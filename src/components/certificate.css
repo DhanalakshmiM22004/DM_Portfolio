@@ -63,7 +63,7 @@
 
 /* Background images for each card */
 .card1-mern {
-  background-image: url('assets/img/1750780087296.jpg');
+  background-image: url('./assets/img/1750780087296.jpg');
 }
 
 .card1-mongo-admin {
