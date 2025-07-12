@@ -49,7 +49,7 @@ const Skill = () => {
 
   return (
     <section id="Skills">
-      <h1 className="title1">Skills</h1>
+      <h1 className="title2">Skills</h1>
       <p className="skill-description">
   Combining creativity and logic to transform ideas into functional and aesthetic web interfaces.
 </p>
