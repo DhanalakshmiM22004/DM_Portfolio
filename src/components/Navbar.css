@@ -160,6 +160,12 @@ body {
   .navbar ul.active li:nth-child(5) { animation-delay: 0.5s; }
   .navbar ul.active li:nth-child(6) { animation-delay: 0.6s; }
 }
+@media screen and (max-width: 380px) {
+  /* Styles for  phones */
+   .logo {
+    font-size: 20px;
+  }
+}
 /* Extra Small Mobile Devices */
 @media screen and (max-width: 320px) {
   /* Styles for extra small phones */
