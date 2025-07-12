@@ -1,0 +1,175 @@
+#Skills{
+scroll-margin-top: 100px;
+}
+ .title2{
+      font-size: 2rem;
+  margin-top: 50px;
+  margin-bottom: 50px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+       opacity: 0;
+    transition: opacity 1s ease-in-out;
+    }
+.title2.show {
+    animation: fadeInDown 1s ease-in-out;
+    opacity: 1;
+}
+.skill-description {
+  text-align: center;
+  font-size: 16px;
+  color: whitesmoke;
+  margin-top: 20px;
+  padding: 0 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  opacity: 0.5;
+  margin-bottom: 50px;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+.skill-description.show {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+.skills-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 1000px;
+
+    }
+.skills-wrapper.show {
+  animation: fadeInBottom 1s ease forwards;
+}
+    .skill {
+      position: relative;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .background-icon {
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 100px;
+      color: rgba(255, 255, 255, 0.05);
+      z-index: 0;
+    }
+
+    .mongodb-icon {
+      width: 60px;
+      opacity: 0.05;
+    }
+
+    .circle-container {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 15px;
+      z-index: 1;
+    }
+
+    .progress-ring__background {
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      stroke: whitesmoke;
+      opacity: 0.2;
+    }
+
+   .circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.progress-ring__circle {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-linecap: round;
+}
+
+
+    .skill h3 {
+      margin-top: 10px;
+      font-size: 18px;
+      z-index: 1;
+      position: relative;
+    }
+    @media (max-width: 1024px) {
+    
+    .skill h3 {
+      margin-top: 10px;
+      font-size: 16px;
+      z-index: 1;
+      position: relative;
+    }
+}
+    @media screen and (max-width: 768px) {
+       .title2{
+      font-size: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+       opacity: 0;
+    transition: opacity 1s ease-in-out;
+    }
+  .skills-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+  }
+
+  .skill {
+    min-width: 0; /* Prevent horizontal overflow */
+  }
+  .skills-wrapper {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+}
+
+@media screen and (max-width: 380px) {
+    .skills-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+      }
+ .title2{
+ margin-top: 20px;
+ font-size: 24.5px;
+    }
+    .tool-row {
+    flex-direction: column;
+    gap: 20px; /* reduce spacing for vertical layout */
+  }
+
+}
+/* Extra Small Mobile Devices */
+@media screen and (max-width: 320px) {
+  /* Styles for extra small phones */
+   .title2{
+     font-size: 25px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+       opacity: 0;
+    transition: opacity 1s ease-in-out;
+    }
+}
