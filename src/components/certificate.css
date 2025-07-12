@@ -71,7 +71,7 @@
 }
 
 .card1-dlk {
-  background-image: url('assets/img/1750780087326.jpg');
+  background-image: url('../assets/img/1750780087326.jpg');
 }
 
 .card1-html {
@@ -79,11 +79,11 @@
 }
 
 .card1-node {
-  background-image: url('assets/img/1750780087345.jpg');
+  background-image: url('../assets/img/1750780087345.jpg');
 }
 
 .card1-dreams {
-  background-image: url('assets/img/1751800994146.jpg');
+  background-image: url('../assets/img/1751800994146.jpg');
 }
 .card1-text {
   width: 100%;
