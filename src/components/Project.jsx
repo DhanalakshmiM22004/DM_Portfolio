@@ -29,7 +29,7 @@ const Project = () => {
         
         <div className="card">
           <video controls>
-           <source src="src/img/plant.mp4"/>
+           <source src="./assets/videos/plant.mp4"/>
             Your browser does not support the video tag.
           </video>
           <div className="description">
@@ -45,7 +45,7 @@ const Project = () => {
 
         <div className="card">
           <video controls>
-            <source src="src\img\MADChat.mp4" type="video/mp4" />
+            <source src="./assets/videos/MADChat.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="description">
@@ -63,7 +63,7 @@ const Project = () => {
         {/* Card 3 */}
         <div className="card">
           <video controls>
-            <source src="src\img\lv_0_20250707125722.mp4" type="video/mp4" />
+            <source src=./assets/videos/lv_0_20250707125722.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div className="description">
