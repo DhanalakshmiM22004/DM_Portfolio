@@ -12,7 +12,7 @@ const Navbar = () => {
       setTimeout(() => {
         setMenuOpen(false);
         setIsClosing(false);
-      }, 700); // increased for stagger close
+      }, 900); // increased for stagger close
     } else {
       setMenuOpen(true);
     }
