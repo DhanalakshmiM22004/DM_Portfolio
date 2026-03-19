@@ -31,7 +31,7 @@ const Navbar = () => {
     setTimeout(() => {
       setMenuOpen(false);
       setIsClosing(false);
-    }, 700);
+    }, 900);
   };
 
   return (
@@ -63,32 +63,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
-  return (
-    <nav className="navbar">
-      <div className="logo">Portfolio</div>
 
-      <div className="menu-toggle" onClick={toggleMenu}>
-        <span id="menu-icon">{menuOpen ? '✕' : '☰'}</span>
-      </div>
-
-      <ul className={`${menuOpen ? 'active' : ''} ${isClosing ? 'closing' : ''}`}>
-        {[
-          { href: 'index.html', label: 'Home' },
-          { href: '#about', label: 'About' },
-          { href: '#Skills', label: 'Skill' },
-          { href: '#Project', label: 'Projects' },
-          { href: '#Certificate', label: 'Certificate' },
-          { href: '#contact', label: 'Contact' }
-        ].map(({ href, label }) => (
-          <li key={label} className="ml">
-            <a onClick={(e) => handleLinkClick(e, href)}>
-              {label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-};
-
-export default Navbar;
