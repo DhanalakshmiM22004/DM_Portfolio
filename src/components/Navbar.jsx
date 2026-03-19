@@ -3,18 +3,36 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(prev => !prev);
+    if (menuOpen) {
+      // Start closing animation
+      setIsClosing(true);
+
+      setTimeout(() => {
+        setMenuOpen(false);
+        setIsClosing(false);
+      }, 400); // match CSS duration
+    } else {
+      setMenuOpen(true);
+    }
   };
 
   const handleLinkClick = (e, href) => {
     e.preventDefault();
     const target = document.querySelector(href);
+
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
-    setMenuOpen(false);
+
+    // Close menu with animation
+    setIsClosing(true);
+    setTimeout(() => {
+      setMenuOpen(false);
+      setIsClosing(false);
+    }, 400);
   };
 
   return (
@@ -25,7 +43,7 @@ const Navbar = () => {
         <span id="menu-icon">{menuOpen ? '✕' : '☰'}</span>
       </div>
 
-      <ul className={menuOpen ? 'active' : ''}>
+      <ul className={`${menuOpen ? 'active' : ''} ${isClosing ? 'closing' : ''}`}>
         {[
           { href: 'index.html', label: 'Home' },
           { href: '#about', label: 'About' },
@@ -35,10 +53,7 @@ const Navbar = () => {
           { href: '#contact', label: 'Contact' }
         ].map(({ href, label }) => (
           <li key={label} className="ml">
-            <a
-              href={href}
-              onClick={href.startsWith('#') ? e => handleLinkClick(e, href) : undefined}
-            >
+            <a onClick={(e) => handleLinkClick(e, href)}>
               {label}
             </a>
           </li>
