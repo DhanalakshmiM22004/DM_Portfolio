@@ -7,13 +7,12 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     if (menuOpen) {
-      // Start closing animation
       setIsClosing(true);
 
       setTimeout(() => {
         setMenuOpen(false);
         setIsClosing(false);
-      }, 400); // match CSS duration
+      }, 700); // increased for stagger close
     } else {
       setMenuOpen(true);
     }
@@ -27,14 +26,43 @@ const Navbar = () => {
       target.scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Close menu with animation
     setIsClosing(true);
+
     setTimeout(() => {
       setMenuOpen(false);
       setIsClosing(false);
-    }, 400);
+    }, 700);
   };
 
+  return (
+    <nav className="navbar">
+      <div className="logo">Portfolio</div>
+
+      <div className="menu-toggle" onClick={toggleMenu}>
+        <span id="menu-icon">{menuOpen ? '✕' : '☰'}</span>
+      </div>
+
+      <ul className={`${menuOpen ? 'active' : ''} ${isClosing ? 'closing' : ''}`}>
+        {[
+          { href: '#home', label: 'Home' },
+          { href: '#about', label: 'About' },
+          { href: '#Skills', label: 'Skill' },
+          { href: '#Project', label: 'Projects' },
+          { href: '#Certificate', label: 'Certificate' },
+          { href: '#contact', label: 'Contact' }
+        ].map(({ href, label }) => (
+          <li key={label} className="ml">
+            <a onClick={(e) => handleLinkClick(e, href)}>
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+export default Navbar;
   return (
     <nav className="navbar">
       <div className="logo">Portfolio</div>
