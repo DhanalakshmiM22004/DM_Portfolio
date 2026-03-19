@@ -107,10 +107,6 @@ body {
     opacity: 1;
   }
 
-  /* CLOSE MENU */
-  .navbar ul.closing {
-    animation: fadeSlideOut 0.5s ease forwards;
-  }
 
   .navbar ul li {
     margin: 15px 0;
@@ -130,14 +126,23 @@ body {
   .navbar ul.active li:nth-child(5) { animation-delay: 0.5s; }
   .navbar ul.active li:nth-child(6) { animation-delay: 0.6s; }
 
-  /* CLOSE ITEMS (6 → 1) 🔥 */
-  .navbar ul.closing li:nth-child(1) { animation: fadeOutRight 0.3s ease forwards; animation-delay: 0.6s; }
-  .navbar ul.closing li:nth-child(2) { animation: fadeOutRight 0.3s ease forwards; animation-delay: 0.5s; }
-  .navbar ul.closing li:nth-child(3) { animation: fadeOutRight 0.3s ease forwards; animation-delay: 0.4s; }
-  .navbar ul.closing li:nth-child(4) { animation: fadeOutRight 0.3s ease forwards; animation-delay: 0.3s; }
-  .navbar ul.closing li:nth-child(5) { animation: fadeOutRight 0.3s ease forwards; animation-delay: 0.2s; }
-  .navbar ul.closing li:nth-child(6) { animation: fadeOutRight 0.3s ease forwards; animation-delay: 0.1s; }
+/* CLOSE MENU (SLOW & SMOOTH) */
+.navbar ul.closing {
+  animation: fadeSlideOut 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
+
+/* CLOSE ITEMS (SLOW + STAGGER) */
+.navbar ul.closing li {
+  opacity: 1;
+}
+
+/* Reverse stagger (6 → 1) */
+.navbar ul.closing li:nth-child(1) { animation: fadeOutRight 0.5s ease forwards; animation-delay: 0.5s; }
+.navbar ul.closing li:nth-child(2) { animation: fadeOutRight 0.5s ease forwards; animation-delay: 0.4s; }
+.navbar ul.closing li:nth-child(3) { animation: fadeOutRight 0.5s ease forwards; animation-delay: 0.3s; }
+.navbar ul.closing li:nth-child(4) { animation: fadeOutRight 0.5s ease forwards; animation-delay: 0.2s; }
+.navbar ul.closing li:nth-child(5) { animation: fadeOutRight 0.5s ease forwards; animation-delay: 0.1s; }
+.navbar ul.closing li:nth-child(6) { animation: fadeOutRight 0.5s ease forwards; animation-delay: 0s; }
 
 /* ANIMATIONS */
 
@@ -311,6 +316,6 @@ body {
   }
   to {
     opacity: 0;
-    transform: translateX(50px);
+    transform: translateX(80px); /* more distance = smoother feel */
   }
-  }
+}
