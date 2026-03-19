@@ -44,7 +44,7 @@ const Navbar = () => {
 
       <ul className={`${menuOpen ? 'active' : ''} ${isClosing ? 'closing' : ''}`}>
         {[
-          { href: '#home', label: 'Home' },
+          { href: 'index.html', label: 'Home' },
           { href: '#about', label: 'About' },
           { href: '#Skills', label: 'Skill' },
           { href: '#Project', label: 'Projects' },
