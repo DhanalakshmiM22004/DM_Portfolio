@@ -53,9 +53,9 @@ const Project = () => {
             <p>
               Completed my first team project: Built a full-stack AI chatbot using HTML, CSS,
               JavaScript, Python, Node.js, and the Ollama Llama 3.2 model.
-              Secured user data with MongoDB and implemented smooth authentication.
-              Added gamification features to boost user engagement with interactive mini-games.
-
+              Secured user data with MongoDB and implemented smooth authentication. Developed the backend with Python and Node.js to ensure reliable, low-latency responses.  
+              Increased user engagement by adding gamified mini games and interactive features.
+              
             </p>
           </div>
         </div>
